@@ -8,5 +8,5 @@ void main() async {
 
   final server = await shelf_io.serve(_server.handler, 'localhost', 8080);
 
-  print("Servidor inicado em http://localhost:8080");
+  print("Servidor iniciado em http://localhost:8080");
 }
