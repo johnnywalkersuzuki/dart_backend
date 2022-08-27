@@ -1,20 +1,23 @@
-A sample command-line application with an entrypoint in `bin/`, library code
-in `lib/`, and example unit test in `test/`.
-
 Back end para Devs Front por Deivid Willyan
 Acessado por Johnny Suzuki em julho/2022
 
 https://www.youtube.com/playlist?list=PLRpTFz5_57csByx34C_98wPn3PAxnUDFr
 # Aula 1 - Introdução ao Backend
 # Aula 2 - Protocolo HTTP e Padrão REST
-
 Utilizando pacote shelf
-# Aula 3 - Criando o servidor HTTP
 
+# Aula 3 - Criando o servidor HTTP
 Utilizando pacote shelf_server
+
 # Aula 4 - Criando a primeira API
+Criando o Handler de Servidor com o arquivo server_handler.dart
+
 # Aula 5 - Passagem de dados com query param e router param
+Usando Request.url.queryparameters
+
 # Aula 6 - Trabalhando com JSON e Método Post
+Usando JsonDecode do pacote dart:convert e router.post
+
 # Aula 7 - Mime Type, Trabalhando com retornos correto
 # Aula 8 - Iniciando o projeto e conhecendo Cascade e Pipeline
 # Aula 9 - Removendo Informações sensíveis com env file (Super Aula)
