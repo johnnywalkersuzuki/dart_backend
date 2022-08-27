@@ -8,7 +8,11 @@ class ServeHandler {
     final router = Router();
     // Aula 4 Primeira rotta GET no raiz
     router.get('/', (Request request) {
-      return Response(200, body: 'Primeira rota');
+      // return Response(200, body: 'Primeira rota');
+      // Aula 6 retornando em HTML
+      return Response(200,
+          body: '<h1>Primeira rota</h1>',
+          headers: {'content-type': 'text/html'});
     });
     // Aula 5 - Usando Get
     // http:/localhost:8080/ola/mundo
@@ -36,7 +40,11 @@ class ServeHandler {
 
       //Se usuário == admin e senha == 123
       if (usuario == 'admin' && senha == '123') {
-        return Response.ok('Bem vindo, $usuario');
+        Map result = {'token': 'token123', 'user_id': 2};
+        String jsonResponse = jsonEncode(result);
+        return Response.ok(jsonResponse,
+            headers: {'content-type': 'application/json'});
+        // return Response.ok('Bem vindo, $usuario');
       } else {
         return Response.forbidden('Acesso negado');
       }
