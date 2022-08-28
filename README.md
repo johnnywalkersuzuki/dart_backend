@@ -25,7 +25,15 @@ Lembrando HTML é 'textJSON é 'application:json'
 Zerando os arquivos e reiniciando backend.dart na pasta bin
 
 # Aula 9 - Removendo Informações sensíveis com env file (Super Aula)
+Criando um leitor de arquivo .env
+Processando string e int
+
 # Aula 10 - Criando APIs RESTful
+GET
+POST
+PUT
+DELETE
+
 # Aula 11 - Model Layer
 # Aula 12 - Service Layer aplicando DIP do SOLID
 # Aula 13 - Isolando as camadas de SERVICE e API
