@@ -19,7 +19,11 @@ Usando Request.url.queryparameters
 Usando JsonDecode do pacote dart:convert e router.post
 
 # Aula 7 - Mime Type, Trabalhando com retornos correto
+Adicionando MIME types para envio com 'content-type'
+Lembrando HTML é 'textJSON é 'application:json'
 # Aula 8 - Iniciando o projeto e conhecendo Cascade e Pipeline
+Zerando os arquivos e reiniciando backend.dart na pasta bin
+
 # Aula 9 - Removendo Informações sensíveis com env file (Super Aula)
 # Aula 10 - Criando APIs RESTful
 # Aula 11 - Model Layer
