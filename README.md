@@ -35,6 +35,8 @@ PUT
 DELETE
 
 # Aula 11 - Model Layer
+Criando a camada de modelo para Notícias, /models/noticia_model.dart
+
 # Aula 12 - Service Layer aplicando DIP do SOLID
 # Aula 13 - Isolando as camadas de SERVICE e API
 # Aula 14 - Custom Middleware
@@ -69,3 +71,11 @@ DELETE
 # Aula 43 - Deploy2: Conhecendo o GCP
 # Aula 44 - Deploy3: Instalando o Servidor MySQL
 # Aula 45 - Deploy4: Instalação do Dart e Deploy
+
+
+### Git
+Lembrando alguns comandos para atualizar:
+git add *
+git commit -m "Mensagem"
+git push --set-upstream origin branch
+Para atualizar no github, usando o branch backend
