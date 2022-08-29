@@ -38,6 +38,7 @@ DELETE
 Criando a camada de modelo para Notícias, /models/noticia_model.dart
 
 # Aula 12 - Service Layer aplicando DIP do SOLID
+Criando a camada de serviços e fazendo injeção de dependência
 # Aula 13 - Isolando as camadas de SERVICE e API
 # Aula 14 - Custom Middleware
 # Aula 15 - Introdução ao JWT pt.1
