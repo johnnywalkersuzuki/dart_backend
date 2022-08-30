@@ -1,13 +1,16 @@
+import 'dart:convert';
+import 'dart:developer';
+
 import 'package:shelf/shelf.dart';
 import 'package:shelf_router/shelf_router.dart';
 
+import '../models/noticia_model.dart';
 import '../services/generic_service.dart';
-import '../services/noticia_service.dart';
 
 class BlogApi {
   // final NoticiaService _service;
   // Usando o DIP, podemos usar o Genérico
-  final GenericService _service;
+  final GenericService<NoticiaModel> _service;
 
   BlogApi(this._service);
 
@@ -16,14 +19,23 @@ class BlogApi {
 
     // Listagem
     router.get('/blog/noticias', (Request req) {
-      // _service.findAll();
-      return Response.ok('Choveu ontem com get');
+      List<NoticiaModel> noticias = _service.findAll();
+      //return Response.ok(noticias.toString());
+      // Retornando em JSON
+      List<Map> noticiasMap = noticias.map((e) => e.toJson()).toList();
+      return Response.ok(jsonEncode(noticiasMap),
+          headers: {'content-type': 'application/json'});
+      //return Response.ok('Choveu ontem com get');
     });
 
     // Nova notícias
-    router.post('/blog/noticias', (Request req) {
+    router.post('/blog/noticias', (Request req) async {
       // _service.save(1);
-      return Response.ok('Choveu agora com post');
+      var body = await req.readAsString();
+
+      //return Response.ok('Choveu agora com post');
+      _service.save(NoticiaModel.fromJson(jsonDecode(body)));
+      return Response(201);
     });
 
     // blog/noticias?id=1 // update

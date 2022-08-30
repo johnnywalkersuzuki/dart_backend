@@ -18,6 +18,9 @@ void main() async {
       Pipeline().addMiddleware(logRequests()).addHandler(cascadeHandler);
 
   // CustomServer().initialize(handler);
+  // print('Hora local em ms:');
+  // print(DateTime.now().millisecondsSinceEpoch.toString());
+
   // Aula 9 - chamar do .env as variáveis
   await CustomServer().initialize(
     handler: handler,
