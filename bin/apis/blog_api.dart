@@ -20,12 +20,13 @@ class BlogApi {
     // Listagem
     router.get('/blog/noticias', (Request req) {
       List<NoticiaModel> noticias = _service.findAll();
-      //return Response.ok(noticias.toString());
+      // return Response.ok(noticias.toString());
       // Retornando em JSON
       List<Map> noticiasMap = noticias.map((e) => e.toJson()).toList();
-      return Response.ok(jsonEncode(noticiasMap),
-          headers: {'content-type': 'application/json'});
-      //return Response.ok('Choveu ontem com get');
+      return Response.ok(jsonEncode(noticiasMap)
+          // , headers: {'content-type': 'application/json'});
+          //return Response.ok('Choveu ontem com get');
+          );
     });
 
     // Nova notícias
