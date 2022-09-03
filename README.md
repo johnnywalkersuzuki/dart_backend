@@ -40,8 +40,13 @@ Criando a camada de modelo para Notícias, /models/noticia_model.dart
 # Aula 12 - Service Layer aplicando DIP do SOLID
 Criando a camada de serviços e fazendo injeção de dependência
 # Aula 13 - Isolando as camadas de SERVICE e API
+
 # Aula 14 - Custom Middleware
+Criando um Middleware customizado para adicionar header com Middleware responseHandler
+
 # Aula 15 - Introdução ao JWT pt.1
+JWT - Referência: https://www.rfc-editor.org/rfc/rfc7519.txt
+
 # Aula 16 - Implantando JWT pt.1
 # Aula 17 - Implantando JWT - Verify pt.2
 # Aula 18 - Implantando JWT - Middleware pt.3
