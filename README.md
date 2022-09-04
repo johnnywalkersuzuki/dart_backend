@@ -48,6 +48,8 @@ Criando um Middleware customizado para adicionar header com Middleware responseH
 JWT - Referência: https://www.rfc-editor.org/rfc/rfc7519.txt
 
 # Aula 16 - Implantando JWT pt.1
+Implementando o JWT para gerar o Token pelo POST do API de Login
+
 # Aula 17 - Implantando JWT - Verify pt.2
 # Aula 18 - Implantando JWT - Middleware pt.3
 # Aula 19 - Implantando JWT - Middleware pt.4
