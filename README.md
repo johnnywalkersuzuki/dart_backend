@@ -51,6 +51,8 @@ JWT - Referência: https://www.rfc-editor.org/rfc/rfc7519.txt
 Implementando o JWT para gerar o Token pelo POST do API de Login
 
 # Aula 17 - Implantando JWT - Verify pt.2
+Implementando o Security Service parte 2 - Implementando o VerifyJWT
+
 # Aula 18 - Implantando JWT - Middleware pt.3
 # Aula 19 - Implantando JWT - Middleware pt.4
 # Aula 20 - Implantando JWT - Filtro no Middleware pt.5

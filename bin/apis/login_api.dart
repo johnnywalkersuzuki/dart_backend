@@ -13,7 +13,11 @@ class LoginApi {
     router.post('/login', (Request req) async {
       //return Response.ok('API de Login');
       // Aula 16 passando a Token
-      return Response.ok(await _securityService.generateJWT('1'));
+      //return Response.ok(await _securityService.generateJWT('1'));
+      // Aula 17 testar a implementação do validateJWT
+      var token = await _securityService.generateJWT('1');
+      var result = await _securityService.validateJWT(token);
+      return Response.ok((result != null).toString());
     });
 
     return router;
