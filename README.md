@@ -54,6 +54,8 @@ Implementando o JWT para gerar o Token pelo POST do API de Login
 Implementando o Security Service parte 2 - Implementando o VerifyJWT
 
 # Aula 18 - Implantando JWT - Middleware pt.3
+Implementando o Middleware de autorização
+
 # Aula 19 - Implantando JWT - Middleware pt.4
 # Aula 20 - Implantando JWT - Filtro no Middleware pt.5
 # Aula 21 - Middlewares Customizados por API

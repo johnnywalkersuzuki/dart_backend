@@ -19,6 +19,8 @@ void main() async {
   // Adicionando um middleware para fazer o nosso log
   var handler = Pipeline()
       .addMiddleware(logRequests())
+      // Aula 18 insere a autorização
+      .addMiddleware(SecurityServiceImp().authorization)
       .addMiddleware(MiddlewareInterception().middleware)
       .addHandler(cascadeHandler);
 
