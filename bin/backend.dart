@@ -20,8 +20,10 @@ void main() async {
   var handler = Pipeline()
       .addMiddleware(logRequests())
       // Aula 18 insere a autorização
-      .addMiddleware(SecurityServiceImp().authorization)
       .addMiddleware(MiddlewareInterception().middleware)
+      .addMiddleware(SecurityServiceImp().authorization)
+      // Aula 19 verifica a JWT após inserir a autorização
+      .addMiddleware(SecurityServiceImp().verifyJWT)
       .addHandler(cascadeHandler);
 
   // CustomServer().initialize(handler);

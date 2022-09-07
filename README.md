@@ -57,6 +57,8 @@ Implementando o Security Service parte 2 - Implementando o VerifyJWT
 Implementando o Middleware de autorização
 
 # Aula 19 - Implantando JWT - Middleware pt.4
+Implementando o Middleware de Verificação do JWT
+
 # Aula 20 - Implantando JWT - Filtro no Middleware pt.5
 # Aula 21 - Middlewares Customizados por API
 # Aula 22 - Criando Injetor de Dependências do Zero
