@@ -6,7 +6,7 @@ import 'security_service.dart';
 
 import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 
-import 'validate/api_router_validate.dart';
+//import 'validate/api_router_validate.dart';
 
 class SecurityServiceImp implements SecurityService<JWT> {
   @override
@@ -69,17 +69,19 @@ class SecurityServiceImp implements SecurityService<JWT> {
   @override
   Middleware get verifyJWT => createMiddleware(
         requestHandler: (Request req) {
-          //Aula 20 Testando o verificador de rota com Builder
-          //_ApiSecurity _apiSecurity = _ApiSecurity();
-          var _apiSecurity = ApiRouterValidate()
-              .add('login')
-              .add('xpto')
-              .add('register')
-              .add('qualquer');
+          // Aula 21 14:46 deixar restrito
+          // //Aula 20 Testando o verificador de rota com Builder
+          // //_ApiSecurity _apiSecurity = _ApiSecurity();
+          // // ignore: no_leading_underscores_for_local_identifiers
+          // var _apiSecurity = ApiRouterValidate()
+          //     .add('login')
+          //     .add('xpto')
+          //     .add('register')
+          //     .add('qualquer');
 
-          if (_apiSecurity.isPublic(req.url.path)) return null;
-          //Aula 20 uma injeção do login
-          //if (req.url.path == 'login') return null;
+          // if (_apiSecurity.isPublic(req.url.path)) return null;
+          // //Aula 20 uma injeção do login
+          // //if (req.url.path == 'login') return null;
 
           if (req.context['jwt'] == null) {
             return Response.forbidden('Access denied');

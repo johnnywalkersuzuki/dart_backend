@@ -12,18 +12,33 @@ void main() async {
   //Aula 8 - Cascade para conseguir chamar em cascata diferentes handlers
   var cascadeHandler = Cascade()
       //Aula 16 está passando o Token para a API de Login
-      .add(LoginApi(SecurityServiceImp()).handler)
-      .add(BlogApi(NoticiaService()).handler)
+      //.add(LoginApi(SecurityServiceImp()).handler)
+      // Aula 21 mudando para o método getHandler
+      .add(LoginApi(SecurityServiceImp()).getHandler(middlewares: [
+        createMiddleware(requestHandler: (Request req) {
+          print('LOG da URL => ${req.url}');
+        })
+      ]))
+      // Aula 21 alterando o handler com o API createHandler
+      // .add(BlogApi(NoticiaService()).handler)
+      .add(BlogApi(NoticiaService()).getHandler(
+        // Aula 21: movendo a verificação de segurança somente para o Blog
+        middlewares: [
+          SecurityServiceImp().authorization,
+          SecurityServiceImp().verifyJWT,
+        ],
+      ))
       .handler;
 
   // Adicionando um middleware para fazer o nosso log
   var handler = Pipeline()
-      .addMiddleware(logRequests())
+      .addMiddleware(logRequests()) // Global Middleware
       // Aula 18 insere a autorização
-      .addMiddleware(MiddlewareInterception().middleware)
-      .addMiddleware(SecurityServiceImp().authorization)
-      // Aula 19 verifica a JWT após inserir a autorização
-      .addMiddleware(SecurityServiceImp().verifyJWT)
+      .addMiddleware(MiddlewareInterception().middleware) // Global Middleware
+      // Aula 21 Restringindo a verificação de segurança
+      // .addMiddleware(SecurityServiceImp().authorization) // Global Middleware
+      // // Aula 19 verifica a JWT após inserir a autorização
+      // .addMiddleware(SecurityServiceImp().verifyJWT) // Global Middleware
       .addHandler(cascadeHandler);
 
   // CustomServer().initialize(handler);
