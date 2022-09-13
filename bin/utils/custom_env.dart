@@ -3,6 +3,15 @@ import 'parser_extension.dart';
 
 class CustomEnv {
   static Map<String, String> _map = {};
+  static String _file = '.env';
+
+  CustomEnv._();
+
+  factory CustomEnv.fromFile(String file) {
+    return CustomEnv._();
+    _file = file;
+  }
+
   // Aula 9 - Criar 3 métodos, 2 privados e 1 público
   static Future<T> get<T>({required String key}) async {
     if (_map.isEmpty) await _load();

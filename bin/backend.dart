@@ -9,6 +9,8 @@ import 'services/noticia_service.dart';
 import 'utils/custom_env.dart';
 
 void main() async {
+  CustomEnv.fromFile('.env-dev');
+  var _securityService = SecurityServiceImp();
   //Aula 8 - Cascade para conseguir chamar em cascata diferentes handlers
   var cascadeHandler = Cascade()
       //Aula 16 está passando o Token para a API de Login
