@@ -9,6 +9,11 @@ import 'package:dart_jsonwebtoken/dart_jsonwebtoken.dart';
 //import 'validate/api_router_validate.dart';
 
 class SecurityServiceImp implements SecurityService<JWT> {
+  // Aula 22 - Construtor para registro do DIP
+  SecurityServiceImp() {
+    print('Objeto criado em ${DateTime.now().microsecondsSinceEpoch}');
+  }
+
   @override
   Future<String> generateJWT(String userID) async {
     var jwt = JWT({

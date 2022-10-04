@@ -3,14 +3,24 @@ import 'package:shelf/shelf.dart';
 import 'apis/blog_api.dart';
 import 'apis/login_api.dart';
 import 'infra/custom_server.dart';
+import 'infra/dependency_injector/dependency_injector.dart';
 import 'infra/middleware_interception.dart';
+import 'infra/security/security_service.dart';
 import 'infra/security/security_service_imp.dart';
 import 'services/noticia_service.dart';
 import 'utils/custom_env.dart';
 
 void main() async {
   CustomEnv.fromFile('.env-dev');
-  var _securityService = SecurityServiceImp();
+  // Aula 22 o DIP
+  final _di = DependencyInjector();
+  // Dessa maneira é uma Factory
+  //_di.register<SecurityService>(() => SecurityServiceImp());
+  // Dessa maneira é um Singleton:
+  _di.register(() => SecurityServiceImp(), isSingleton: true);
+  //var _securityService = SecurityServiceImp();
+  var _securityService = _di.get<SecurityService>();
+
   //Aula 8 - Cascade para conseguir chamar em cascata diferentes handlers
   var cascadeHandler = Cascade()
       //Aula 16 está passando o Token para a API de Login
